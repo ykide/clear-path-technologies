@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     description: site.description,
   },
   twitter: { card: "summary_large_image", title: `${site.name} | ${site.tagline}`, description: site.description },
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
   robots: { index: true, follow: true },
 };
 
