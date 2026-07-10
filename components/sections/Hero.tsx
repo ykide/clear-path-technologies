@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { HeroMotion } from "./HeroMotion";
 import { HeroVisualization } from "./HeroVisualization";
 
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden border-b border-line py-20 sm:py-28 lg:py-32">
+      <HeroMotion />
       <Container className="grid items-center gap-14 lg:grid-cols-[1.05fr_.95fr] lg:gap-10">
         <Reveal>
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-line bg-card/40 px-3 py-1.5 text-xs text-secondary">
@@ -18,7 +20,7 @@ export function Hero() {
             ClearPath Technologies helps government contractors and professional services firms modernize operations, automate workflows, centralize business data, and give leadership the visibility to make faster, smarter decisions through intelligent business systems.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Button href="#contact" arrow>Book a discovery call</Button>
+            <Button href="/contact" arrow>Book a discovery call</Button>
             <Button href="#services" variant="secondary">Explore services</Button>
           </div>
           <p className="mt-7 text-sm font-medium text-muted">Technology is our tool. <span className="text-secondary">Business outcomes are our product.</span></p>

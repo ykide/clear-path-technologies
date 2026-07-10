@@ -1,7 +1,7 @@
 import { AlertCircle, Check } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Reveal } from "@/components/ui/Reveal";
+import { MotionListItem, Reveal, StaggerList } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { site } from "@/content/site";
 
@@ -28,9 +28,14 @@ function GapColumn({ title, items, positive = false }: { title: string; items: r
   return (
     <div className={`bg-surface p-7 sm:p-10 ${positive ? "border-t border-line md:border-l md:border-t-0" : ""}`}>
       <h3 className={`mb-7 text-xs font-semibold uppercase tracking-[0.14em] ${positive ? "text-signal" : "text-muted"}`}>{title}</h3>
-      <ul className="space-y-5">
-        {items.map((item) => <li key={item} className="flex gap-3 text-sm leading-6 text-secondary sm:text-[15px]"><Icon className={`mt-0.5 size-4 shrink-0 ${positive ? "text-signal" : "text-muted"}`} aria-hidden="true" />{item}</li>)}
-      </ul>
+      <StaggerList className="space-y-5">
+        {items.map((item) => (
+          <MotionListItem key={item} className="flex gap-3 text-sm leading-6 text-secondary sm:text-[15px]">
+            <Icon className={`mt-0.5 size-4 shrink-0 ${positive ? "text-signal" : "text-muted"}`} aria-hidden="true" />
+            {item}
+          </MotionListItem>
+        ))}
+      </StaggerList>
     </div>
   );
 }

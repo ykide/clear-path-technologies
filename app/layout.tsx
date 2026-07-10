@@ -13,13 +13,7 @@ export const metadata: Metadata = {
   title: { default: `${site.name} | ${site.tagline}`, template: `%s | ${site.name}` },
   description: site.description,
   applicationName: site.name,
-  keywords: [
-    "operational excellence consulting",
-    "government contractor automation",
-    "workflow automation",
-    "executive dashboards",
-    "business process modernization",
-  ],
+  keywords: ["operational excellence consulting", "government contractor automation", "workflow automation", "executive dashboards", "business process modernization"],
   authors: [{ name: site.name }],
   creator: site.name,
   openGraph: {
@@ -30,31 +24,17 @@ export const metadata: Metadata = {
     title: `${site.name} | ${site.tagline}`,
     description: site.description,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: `${site.name} | ${site.tagline}`,
-    description: site.description,
-  },
+  twitter: { card: "summary_large_image", title: `${site.name} | ${site.tagline}`, description: site.description },
   robots: { index: true, follow: true },
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: "#0B1220",
-  colorScheme: "dark",
-};
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0B1220", colorScheme: "dark" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <body>
-        <a
-          href="#main-content"
-          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded bg-signal px-4 py-2 font-semibold text-background transition focus:translate-y-0"
-        >
-          Skip to content
-        </a>
+        <a href="#main-content" className="fixed left-4 top-4 z-[100] -translate-y-24 rounded bg-signal px-4 py-2 font-semibold text-background transition focus:translate-y-0">Skip to content</a>
         <div aria-hidden="true" className="site-grid" />
         <Header />
         <main id="main-content">{children}</main>

@@ -1,8 +1,12 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+type ButtonProps = HTMLMotionProps<"a"> & {
   variant?: "primary" | "secondary" | "ghost";
   children: ReactNode;
   arrow?: boolean;
@@ -15,17 +19,21 @@ const variants = {
 };
 
 export function Button({ variant = "primary", arrow = false, className, children, ...props }: ButtonProps) {
+  const reduced = useReducedMotion();
+
   return (
-    <a
+    <motion.a
+      whileHover={reduced ? undefined : { y: -2 }}
+      whileTap={reduced ? undefined : { scale: 0.98 }}
       className={cn(
-        "inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "group inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         variants[variant],
         className,
       )}
       {...props}
     >
       {children}
-      {arrow && <ArrowUpRight aria-hidden="true" className="size-4" />}
-    </a>
+      {arrow && <ArrowUpRight aria-hidden="true" className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />}
+    </motion.a>
   );
 }

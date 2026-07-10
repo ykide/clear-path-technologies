@@ -1,6 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Reveal } from "@/components/ui/Reveal";
+import { MotionListItem, Reveal, Stagger } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { site } from "@/content/site";
 
@@ -13,16 +13,19 @@ export function MethodologySection() {
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">A disciplined path from assessment to system.</h2>
           <p className="mt-5 leading-7 text-secondary">Every engagement follows the rigor we design into your operations: clear sequence, clear ownership, clear outcomes.</p>
         </Reveal>
-        <Reveal>
+        <Stagger>
           <ol className="border-b border-line">
             {site.methodology.map((step, index) => (
-              <li key={step.title} className="grid grid-cols-[44px_1fr] gap-4 border-t border-line py-6 sm:grid-cols-[60px_1fr] sm:py-7">
+              <MotionListItem key={step.title} className="group grid grid-cols-[44px_1fr] gap-4 border-t border-line py-6 sm:grid-cols-[60px_1fr] sm:py-7">
                 <span className="font-mono text-xs text-signal">{String(index + 1).padStart(2, "0")}</span>
-                <div><h3 className="font-semibold">{step.title}</h3><p className="mt-2 max-w-lg text-sm leading-6 text-muted">{step.description}</p></div>
-              </li>
+                <div>
+                  <h3 className="font-semibold transition-colors group-hover:text-signal">{step.title}</h3>
+                  <p className="mt-2 max-w-lg text-sm leading-6 text-muted">{step.description}</p>
+                </div>
+              </MotionListItem>
             ))}
           </ol>
-        </Reveal>
+        </Stagger>
       </Container>
     </Section>
   );

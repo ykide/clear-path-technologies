@@ -22,13 +22,16 @@ export const site = {
   tagline: "We engineer operational excellence.",
   description:
     "Operational excellence consulting for government contractors and professional services firms. We modernize operations, automate workflows, and turn business data into executive clarity.",
-  email: "hello@clearpathtechnologies.com",
+  contact: {
+    email: "hello@clearpathtechnologies.com",
+    linkedin: "https://www.linkedin.com/company/clearpath-technologies/",
+  },
   nav: [
-    { label: "Services", href: "#services" },
-    { label: "Industries", href: "#industries" },
-    { label: "Methodology", href: "#methodology" },
-    { label: "ClearPath OS", href: "#clearpath-os" },
-    { label: "Insights", href: "#insights" },
+    { label: "Services", href: "/#services" },
+    { label: "Industries", href: "/#industries" },
+    { label: "Methodology", href: "/#methodology" },
+    { label: "ClearPath OS", href: "/#clearpath-os" },
+    { label: "Insights", href: "/#insights" },
   ] satisfies NavItem[],
   audiences: [
     "Government Contractors",

@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { site } from "@/content/site";
@@ -18,12 +19,24 @@ export function Header() {
     return () => window.removeEventListener("resize", close);
   }, []);
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-background/85 backdrop-blur-xl">
       <Container className="flex h-[72px] items-center justify-between">
-        <a href="#top" aria-label="ClearPath Technologies home" className="rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal">
+        <Link href="/" aria-label="ClearPath Technologies home" className="rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal">
           <Brand />
-        </a>
+        </Link>
         <nav aria-label="Primary navigation" className="hidden items-center gap-7 lg:flex">
           {site.nav.map((item) => (
             <a key={item.href} href={item.href} className="rounded text-sm font-medium text-secondary transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal">
@@ -31,7 +44,7 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <div className="hidden lg:block"><Button href="#contact" className="min-h-0 px-4 py-2.5">Book a discovery call</Button></div>
+        <div className="hidden lg:block"><Button href="/contact" className="min-h-0 px-4 py-2.5">Book a discovery call</Button></div>
         <button
           type="button"
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
@@ -55,11 +68,11 @@ export function Header() {
           >
             <Container className="flex flex-col py-5">
               {site.nav.map((item) => (
-                <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="border-b border-line/70 py-4 text-sm font-medium text-secondary hover:text-ink">
+                <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="border-b border-line/70 py-4 text-sm font-medium text-secondary hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-signal">
                   {item.label}
                 </a>
               ))}
-              <Button href="#contact" onClick={() => setOpen(false)} className="mt-5">Book a discovery call</Button>
+              <Button href="/contact" onClick={() => setOpen(false)} className="mt-5">Book a discovery call</Button>
             </Container>
           </motion.nav>
         )}
