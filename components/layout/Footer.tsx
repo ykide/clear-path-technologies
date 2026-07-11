@@ -1,7 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
 import { site } from "@/content/site";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
 import { services } from "@/content/services";
 import { Brand } from "./Brand";
 
@@ -21,6 +22,9 @@ export function Footer() {
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-muted">Start a conversation</p>
             <div className="flex flex-col items-start gap-3">
+              <Button href="/contact" className="min-h-0 px-4 py-2.5" arrow>
+                Book a discovery call
+              </Button>
               <a
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded text-sm font-semibold text-secondary hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
