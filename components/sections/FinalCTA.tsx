@@ -18,7 +18,7 @@ export function FinalCTA() {
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Button href="/contact" arrow>Book a discovery call</Button>
-            <Button href="#services" variant="secondary">Explore services</Button>
+            <Button href="/services" variant="secondary">Explore services</Button>
           </div>
         </Reveal>
       </Container>

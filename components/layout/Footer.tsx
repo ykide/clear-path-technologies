@@ -1,10 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { site } from "@/content/site";
 import { Container } from "@/components/ui/Container";
+import { site } from "@/content/site";
+import { services } from "@/content/services";
 import { Brand } from "./Brand";
 
-const serviceLinks = site.services.slice(0, 4).map((item) => ({ label: item.title, href: "/#services" }));
+const serviceLinks = services.slice(0, 4).map((item) => ({ label: item.shortTitle, href: `/services/${item.slug}` }));
 
 export function Footer() {
   return (
@@ -15,11 +16,17 @@ export function Footer() {
             <Link href="/" aria-label="ClearPath Technologies home"><Brand /></Link>
             <p className="mt-5 max-w-xs text-sm leading-6 text-muted">An operational excellence consulting company. Technology is our tool. Business outcomes are our product.</p>
           </div>
-          <FooterColumn title="Services" links={serviceLinks} />
+          <FooterColumn title="Services" links={[{ label: "Services hub", href: "/services" }, ...serviceLinks]} />
           <FooterColumn title="Company" links={[...site.nav.slice(1, 4), { label: "About", href: "/#credibility" }]} />
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-muted">Start a conversation</p>
             <div className="flex flex-col items-start gap-3">
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded text-sm font-semibold text-secondary hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              >
+                Book a discovery call<ArrowUpRight aria-hidden="true" className="size-3.5" />
+              </a>
               <a
                 href={`mailto:${site.contact.email}`}
                 aria-label={`Email ClearPath Technologies at ${site.contact.email}`}
