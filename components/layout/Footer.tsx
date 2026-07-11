@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { site } from "@/content/site";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Brand } from "./Brand";
 
@@ -20,6 +21,9 @@ export function Footer() {
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-muted">Start a conversation</p>
             <div className="flex flex-col items-start gap-3">
+              <Button href="/contact" className="min-h-0 px-4 py-2.5" arrow>
+                Book a discovery call
+              </Button>
               <a
                 href={`mailto:${site.contact.email}`}
                 aria-label={`Email ClearPath Technologies at ${site.contact.email}`}
