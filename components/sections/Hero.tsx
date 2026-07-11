@@ -21,7 +21,7 @@ export function Hero() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button href="/contact" arrow>Book a discovery call</Button>
-            <Button href="#services" variant="secondary">Explore services</Button>
+            <Button href="/services" variant="secondary">Explore services</Button>
           </div>
           <p className="mt-7 text-sm font-medium text-muted">Technology is our tool. <span className="text-secondary">Business outcomes are our product.</span></p>
         </Reveal>

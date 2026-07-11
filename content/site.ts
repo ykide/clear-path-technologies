@@ -27,7 +27,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/company/clearpath-technologies/",
   },
   nav: [
-    { label: "Services", href: "/#services" },
+    { label: "Services", href: "/services" },
     { label: "Industries", href: "/#industries" },
     { label: "Methodology", href: "/#methodology" },
     { label: "ClearPath OS", href: "/#clearpath-os" },
