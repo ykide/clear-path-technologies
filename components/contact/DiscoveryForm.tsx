@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { cloneElement, useId, useState } from "react";
+import { cloneElement, useId, useMemo, useState } from "react";
 import type { ReactElement } from "react";
 import { useForm, type FieldPath } from "react-hook-form";
 import { AlertCircle } from "lucide-react";
@@ -39,6 +39,7 @@ const initialValues: ContactFormValues = {
 
 export function DiscoveryForm() {
   const formId = useId();
+  const submittedAt = useMemo(() => Date.now(), []);
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const {
@@ -58,7 +59,7 @@ export function DiscoveryForm() {
     const response = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
+      body: JSON.stringify({ ...values, submittedAt }),
     });
 
     const result = (await response.json().catch(() => null)) as
@@ -217,3 +218,5 @@ function cloneField(
     "aria-describedby": describedBy,
   });
 }
+
+

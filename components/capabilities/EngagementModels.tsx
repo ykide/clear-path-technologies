@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal, Stagger, MotionCard } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { engagementModels } from "@/content/services";
+import { engagementModels } from "@/content/capabilities";
 
 export function EngagementModels() {
   return (
@@ -39,3 +39,5 @@ export function EngagementModels() {
     </Section>
   );
 }
+
+

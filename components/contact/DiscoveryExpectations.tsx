@@ -5,17 +5,17 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 const expectations = [
   {
     title: "Understand the current operating model",
-    description: "We’ll discuss how work, approvals, information, and decisions move across the organization.",
+    description: "We'll discuss how work, approvals, information, and decisions move across the organization.",
     icon: Waypoints,
   },
   {
     title: "Identify high-leverage opportunities",
-    description: "We’ll look for repetitive work, disconnected systems, reporting gaps, and operational risks.",
+    description: "We'll look for repetitive work, disconnected systems, reporting gaps, and operational risks.",
     icon: SearchCheck,
   },
   {
     title: "Determine the right next step",
-    description: "We’ll decide whether an assessment, focused modernization engagement, or broader operating-system initiative makes sense.",
+    description: "We'll decide whether an assessment, focused modernization engagement, or broader operating-system initiative makes sense.",
     icon: ClipboardCheck,
   },
 ] as const;
@@ -31,7 +31,7 @@ export function DiscoveryExpectations() {
               <Icon aria-hidden="true" className="size-4" />
             </div>
             <div>
-              <h2 className="font-semibold leading-6">{title}</h2>
+              <h3 className="font-semibold leading-6">{title}</h3>
               <p className="mt-2 text-sm leading-6 text-muted">{description}</p>
             </div>
           </div>

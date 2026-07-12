@@ -3,13 +3,13 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function ServicesHero() {
+export function CapabilitiesHero() {
   return (
     <section className="relative overflow-hidden border-b border-line py-20 sm:py-28 lg:py-32">
       <div aria-hidden="true" className="absolute left-1/2 top-0 h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/15 blur-[110px]" />
       <Container className="relative">
         <Reveal className="max-w-4xl">
-          <Eyebrow>Services</Eyebrow>
+          <Eyebrow>Capabilities</Eyebrow>
           <h1 className="mt-6 text-4xl font-semibold tracking-[-0.045em] sm:text-5xl lg:text-6xl">
             Build the operating systems your organization needs to scale with clarity.
           </h1>
@@ -18,10 +18,12 @@ export function ServicesHero() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button href="/contact" arrow>Book a discovery call</Button>
-            <Button href="#approach" variant="secondary">Explore our approach</Button>
+            <Button href="#capability-navigation" variant="secondary">Explore capabilities</Button>
           </div>
         </Reveal>
       </Container>
     </section>
   );
 }
+
+

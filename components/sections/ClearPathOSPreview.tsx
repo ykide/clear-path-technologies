@@ -15,7 +15,7 @@ export function ClearPathOSPreview() {
         transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="mb-5 flex items-center justify-between">
-          <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-muted">Illustrative product interface</span>
+          <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-muted">Conceptual operating layer</span>
           <motion.div
             className="size-2 rounded-full bg-signal"
             animate={reduced ? undefined : { boxShadow: ["0 0 0 0 rgba(20,184,166,.45)", "0 0 0 8px rgba(20,184,166,0)", "0 0 0 0 rgba(20,184,166,0)"] }}
@@ -23,7 +23,7 @@ export function ClearPathOSPreview() {
           />
         </div>
         <div className="grid grid-cols-3 gap-3">
-          {[["Operational health", "92%"], ["Open workflows", "18"], ["Time recovered", "↑"]].map(([label, value], index) => (
+          {[["Workflow", "Mapped"], ["Signals", "Visible"], ["Roadmap", "Prioritized"]].map(([label, value], index) => (
             <motion.div
               key={label}
               className="rounded-md border border-line bg-surface p-3"
@@ -33,13 +33,13 @@ export function ClearPathOSPreview() {
               transition={{ duration: 0.45, delay: 0.16 + index * 0.08 }}
             >
               <p className="text-[9px] text-muted">{label}</p>
-              <p className="mt-2 text-lg font-semibold text-ink">{value}</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{value}</p>
             </motion.div>
           ))}
         </div>
         <div className="mt-3 rounded-md border border-line bg-surface p-4">
           <p className="text-[9px] uppercase tracking-wider text-muted">Operating trend</p>
-          <svg className="mt-4 w-full" viewBox="0 0 360 120" fill="none">
+          <svg className="mt-4 w-full" viewBox="0 0 360 120" fill="none" aria-hidden="true">
             <motion.path
               d="M0 104 52 86l50 8 52-42 50 15 52-38 52 10 52-27"
               stroke="#2563EB"
@@ -73,3 +73,5 @@ export function ClearPathOSPreview() {
     </div>
   );
 }
+
+

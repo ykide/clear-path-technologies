@@ -30,6 +30,7 @@ export type Service = {
   problem: string;
   response: string;
   outcomes: readonly string[];
+  engagements: readonly string[];
   icon: LucideIcon;
 };
 
@@ -54,6 +55,7 @@ export const services = [
     problem: "Work is fragmented across teams, tools, and undocumented processes.",
     response: "Assess the operating model, identify bottlenecks, and redesign how work, information, and decisions move.",
     outcomes: ["Reduced operational friction", "Clear ownership", "Better process consistency", "Measurable improvement roadmap"],
+    engagements: ["Operating-model assessment", "Friction and risk analysis", "Modernization roadmap"],
     icon: Network,
   },
   {
@@ -63,6 +65,7 @@ export const services = [
     problem: "Employees spend valuable time moving information, chasing approvals, and completing repetitive work.",
     response: "Design and automate workflows across existing systems and purpose-built applications.",
     outcomes: ["Less manual work", "Faster cycle times", "Fewer handoff errors", "More scalable operations"],
+    engagements: ["Workflow discovery and mapping", "Target-state workflow design", "Automation implementation plan"],
     icon: GitBranch,
   },
   {
@@ -72,15 +75,17 @@ export const services = [
     problem: "Critical processes still depend on spreadsheets, inboxes, paper, or legacy applications.",
     response: "Transform outdated processes into resilient, traceable, and user-centered digital systems.",
     outcomes: ["Standardized processes", "Improved accountability", "Better auditability", "Reduced operational risk"],
+    engagements: ["Current-state process review", "Target-state digital process design", "Implementation scope"],
     icon: Waypoints,
   },
   {
     slug: "custom-business-applications",
     title: "Custom Business Applications",
     shortTitle: "Custom Applications",
-    problem: "Off-the-shelf software does not match the organization’s real operating model.",
-    response: "Design and build secure internal applications around the organization’s specific workflows and decisions.",
+    problem: "Off-the-shelf software does not match the organization's real operating model.",
+    response: "Design and build secure internal applications around the organization's specific workflows and decisions.",
     outcomes: ["Better workflow fit", "Centralized information", "Reduced tool fragmentation", "Reusable platform capabilities"],
+    engagements: ["Application discovery and workflow fit", "UX and data model design", "Secure internal application build"],
     icon: Blocks,
   },
   {
@@ -90,6 +95,7 @@ export const services = [
     problem: "Leadership lacks a trusted, current view of operations, delivery, finance, and risk.",
     response: "Create decision-focused dashboards supported by governed data and clear performance measures.",
     outcomes: ["Real-time visibility", "Faster decisions", "Shared performance view", "Earlier risk detection"],
+    engagements: ["Leadership visibility assessment", "Metric and data model definition", "Executive dashboard implementation"],
     icon: LayoutDashboard,
   },
   {
@@ -99,6 +105,7 @@ export const services = [
     problem: "Data is available but difficult to reconcile, interpret, or use consistently.",
     response: "Build data models, reporting systems, analytics, and decision-ready information products.",
     outcomes: ["Trusted reporting", "Consistent metrics", "Better forecasting", "Improved decision quality"],
+    engagements: ["Reporting and metric alignment", "Data model and pipeline design", "Decision-ready reporting system"],
     icon: BarChart3,
   },
   {
@@ -108,6 +115,7 @@ export const services = [
     problem: "Legacy platforms restrict scale, integration, security, and delivery speed.",
     response: "Modernize applications and infrastructure using secure, cloud-native, compliance-aware architecture.",
     outcomes: ["Improved resilience", "Faster delivery", "Better scalability", "Stronger security foundation"],
+    engagements: ["Cloud readiness assessment", "Architecture modernization roadmap", "Migration and platform implementation"],
     icon: Cloud,
   },
   {
@@ -117,15 +125,17 @@ export const services = [
     problem: "Organizations see AI opportunities but struggle to connect them to practical, governed business value.",
     response: "Embed AI into document, knowledge, reporting, support, and decision workflows where it creates measurable value.",
     outcomes: ["Faster information processing", "Improved knowledge access", "Reduced repetitive analysis", "Governed AI adoption"],
+    engagements: ["AI opportunity assessment", "Document and knowledge workflow design", "Governed AI pilot"],
     icon: Bot,
   },
   {
     slug: "fractional-cto",
-    title: "Fractional CTO Services",
+    title: "Fractional CTO",
     shortTitle: "Fractional CTO",
     problem: "The organization needs senior technical leadership but does not yet require or cannot justify a full-time executive.",
     response: "Provide architecture, technology strategy, delivery governance, vendor guidance, and modernization leadership.",
     outcomes: ["Stronger technical decisions", "Reduced delivery risk", "Clear modernization roadmap", "Alignment between technology and business priorities"],
+    engagements: ["Technology strategy assessment", "Architecture and roadmap leadership", "Delivery governance cadence"],
     icon: Settings2,
   },
 ] as const satisfies readonly Service[];

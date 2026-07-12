@@ -58,6 +58,7 @@ export const contactFormSchema = z.object({
   ),
   consent: z.preprocess((value) => value === true, z.boolean().refine((value) => value, { message: "Consent is required to submit this inquiry." })),
   website: textInput(z.string().max(0, "Spam protection triggered.")).optional().or(z.literal("")),
+  submittedAt: z.coerce.number().int().positive().optional(),
 });
 
 export type ContactFormInput = z.infer<typeof contactFormSchema>;

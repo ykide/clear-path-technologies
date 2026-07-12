@@ -4,15 +4,15 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { serviceSequence } from "@/content/services";
+import { serviceSequence } from "@/content/capabilities";
 
-export function ServicesMethodology() {
+export function CapabilitiesMethodology() {
   return (
     <Section id="approach">
       <Container>
         <Reveal className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <Eyebrow>How services work together</Eyebrow>
+            <Eyebrow>How capabilities work together</Eyebrow>
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               We diagnose the operating problem first.
             </h2>
@@ -58,3 +58,5 @@ export function ServicesMethodology() {
     </Section>
   );
 }
+
+
