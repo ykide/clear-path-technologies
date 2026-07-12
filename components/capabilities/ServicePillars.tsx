@@ -3,17 +3,17 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal, Stagger, MotionCard } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { getServicesBySlug, servicePillars } from "@/content/services";
+import { getServicesBySlug, servicePillars } from "@/content/capabilities";
 
 export function ServicePillars() {
   return (
     <Section id="pillars">
       <Container>
         <Reveal className="mb-14 max-w-3xl">
-          <Eyebrow>Strategic service pillars</Eyebrow>
+          <Eyebrow>Strategic capability pillars</Eyebrow>
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Three ways ClearPath creates operational leverage.</h2>
           <p className="mt-5 leading-7 text-secondary">
-            Services are grouped around the business outcomes leaders actually need: better operating flow, modern systems, and trusted visibility.
+            Capabilities are grouped around the business outcomes leaders actually need: better operating flow, modern systems, and trusted visibility.
           </p>
         </Reveal>
 
@@ -45,3 +45,5 @@ export function ServicePillars() {
     </Section>
   );
 }
+
+

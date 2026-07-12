@@ -1,7 +1,7 @@
 import { ArrowUpRight, Check } from "lucide-react";
 import Link from "next/link";
 import { MotionCard } from "@/components/ui/Reveal";
-import type { Service } from "@/content/services";
+import type { Service } from "@/content/capabilities";
 
 export function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
@@ -13,9 +13,9 @@ export function ServiceCard({ service }: { service: Service }) {
           <Icon aria-hidden="true" className="size-5" />
         </div>
         <Link
-          href={`/services/${service.slug}`}
+          href={`/capabilities#${service.slug}`}
           className="inline-flex items-center gap-1.5 rounded text-xs font-semibold uppercase tracking-[0.12em] text-muted transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
-          aria-label={`View ${service.title} service detail page`}
+          aria-label={`Jump to ${service.title} on the capabilities page`}
         >
           Details
           <ArrowUpRight aria-hidden="true" className="size-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -46,3 +46,5 @@ export function ServiceCard({ service }: { service: Service }) {
     </MotionCard>
   );
 }
+
+

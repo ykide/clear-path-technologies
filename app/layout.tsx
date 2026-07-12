@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { site } from "@/content/site";
+import { defaultOgImage, jsonLdScriptProps, organizationJsonLd, professionalServiceJsonLd, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   keywords: ["operational excellence consulting", "government contractor automation", "workflow automation", "executive dashboards", "business process modernization"],
   authors: [{ name: site.name }],
   creator: site.name,
+  publisher: site.name,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -23,9 +26,11 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} | ${site.tagline}`,
     description: site.description,
+    images: [defaultOgImage],
   },
-  twitter: { card: "summary_large_image", title: `${site.name} | ${site.tagline}`, description: site.description },
+  twitter: { card: "summary_large_image", title: `${site.name} | ${site.tagline}`, description: site.description, images: ["/twitter-image"] },
   icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
+  formatDetection: { telephone: false, email: false, address: false },
   robots: { index: true, follow: true },
 };
 
@@ -35,7 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <body>
-        <a href="#main-content" className="fixed left-4 top-4 z-[100] -translate-y-24 rounded bg-signal px-4 py-2 font-semibold text-background transition focus:translate-y-0">Skip to content</a>
+        <script {...jsonLdScriptProps([organizationJsonLd(), professionalServiceJsonLd(), websiteJsonLd()])} />
         <div aria-hidden="true" className="site-grid" />
         <Header />
         <main id="main-content">{children}</main>
@@ -44,3 +49,5 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
+
+

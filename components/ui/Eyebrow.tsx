@@ -9,3 +9,5 @@ export function Eyebrow({ className, children, ...props }: HTMLAttributes<HTMLPa
     </p>
   );
 }
+
+

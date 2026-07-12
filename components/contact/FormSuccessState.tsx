@@ -14,8 +14,10 @@ export function FormSuccessState() {
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Button href="/" variant="secondary">Return to homepage</Button>
-        <Button href="/#services" arrow>Explore services</Button>
+        <Button href="/capabilities" arrow>Explore capabilities</Button>
       </div>
     </Card>
   );
 }
+
+
